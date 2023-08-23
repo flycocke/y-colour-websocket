@@ -1,2 +1,2 @@
-# y-colour-websocket
-yjs-websocket
+# YJS WEB socket
+## add readonly mode
