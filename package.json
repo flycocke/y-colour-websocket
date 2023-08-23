@@ -17,7 +17,7 @@
   ],
   "scripts": {
     "clean": "rm -rf dist *.d.ts */*.d.ts *.d.ts.map */*.d.ts.map",
-    "dist": "rm -rf dist && rollup -c",
+    "dist": "rm -rf dist && rollup -c && tsc",
     "test": "npm run lint && npm run dist && node dist/test.cjs",
     "lint": "standard && tsc",
     "types": "tsc --outDir .",
