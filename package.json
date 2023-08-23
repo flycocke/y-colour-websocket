@@ -99,7 +99,8 @@
   "main": "auth.js",
   "bin": {
     "y-websocket-server": "./bin/server.js",
-    "y-websocket": "./bin/server.js"
+    "y-websocket-callback": "./bin/callback.js",
+    "y-websocket-utils": "./bin/utils.js"
   },
   "types": "./auth.d.ts"
 }
