@@ -113,16 +113,22 @@ export const readUpdate = readSyncStep2
  */
 export const readSyncMessage = (decoder, encoder, doc, transactionOrigin) => {
   const messageType = decoding.readVarUint(decoder)
-  const readOnly = transactionOrigin?.readOnly
+  var readOnly = false
+  // @ts-ignore
+  if (typeof transactionOrigin !== 'undefined') {
+    if (transactionOrigin.hasOwnProperty('readOnly')) {
+      readOnly = transactionOrigin.readOnly
+    }
+  }
   switch (messageType) {
     case messageYjsSyncStep1:
       readSyncStep1(decoder, encoder, doc)
       break
     case messageYjsSyncStep2:
-      !readOnly&&readSyncStep2(decoder, doc, transactionOrigin)
+      !readOnly && readSyncStep2(decoder, doc, transactionOrigin)
       break
     case messageYjsUpdate:
-      !readOnly&&readUpdate(decoder, doc, transactionOrigin)
+      !readOnly && readUpdate(decoder, doc, transactionOrigin)
       break
     default:
       throw new Error('Unknown message type')

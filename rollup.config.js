@@ -30,14 +30,16 @@ export default [{
     }
   },
   external: /** @param  {any} id */ id => /^lib0\/|yjs/.test(id)
-},{
+}, {
   input: './src/y-websocket.js',
+  // @ts-ignore
   external: id => /^(lib0|yjs|y-colour-websocket)/.test(id),
   output: [{
     name: 'y-websocket',
     file: 'dist/y-websocket.cjs',
     format: 'cjs',
     sourcemap: true,
+    // @ts-ignore
     paths: path => {
       if (/^lib0\//.test(path)) {
         return `lib0/dist${path.slice(4)}.cjs`

@@ -1,8 +1,8 @@
 {
   "name": "y-colour-websocket",
-  "version": "1.0.1",
-  "description": "Yjs websocket",
-  "type": "module",
+  "version": "1.0.2",
+  "description": "Yjs colour websocket",
+  "types": "./dist/src/y-websocket.d.ts",
   "funding": {
     "type": "GitHub Sponsors ❤",
     "url": "https://github.com/sponsors/dmonad"
@@ -23,7 +23,8 @@
     "types": "tsc --outDir .",
     "debug": "rollup -c && concurrently 'rollup -wc' 'http-server -o test.html'",
     "preversion": "npm run dist && npm run test && npm run types && test -e dist/src/y-websocket.d.ts && test -e dist/y-websocket.cjs",
-    "postpublish": "npm run clean"
+    "postpublish": "npm run clean",
+    "preversion2": "npm run lint && npm run dist && npm run test && test -e dist/src/y-websocket.d.ts && test -e dist/y-websocket.cjs"
   },
   "repository": {
     "type": "git",
@@ -101,6 +102,5 @@
     "y-websocket-server": "./bin/server.js",
     "y-websocket-callback": "./bin/callback.js",
     "y-websocket-utils": "./bin/utils.js"
-  },
-  "types": "./auth.d.ts"
+  }
 }
