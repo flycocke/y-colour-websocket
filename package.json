@@ -1,6 +1,6 @@
 {
   "name": "y-colour-websocket",
-  "version": "1.0.6",
+  "version": "1.0.7",
   "description": "Yjs colour websocket",
   "types": "./dist/src/y-websocket.d.ts",
   "funding": {
