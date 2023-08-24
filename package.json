@@ -1,6 +1,6 @@
 {
   "name": "y-colour-websocket",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "Yjs colour websocket",
   "types": "./dist/src/y-websocket.d.ts",
   "funding": {
@@ -22,7 +22,7 @@
     "lint": "standard && tsc",
     "types": "tsc --outDir .",
     "debug": "rollup -c && concurrently 'rollup -wc' 'http-server -o test.html'",
-    "preversion": "npm run dist && npm run test && npm run types && test -e dist/src/y-websocket.d.ts && test -e dist/y-websocket.cjs",
+    "preversion": "npm run lint && npm run dist && npm run test && test -e dist/src/y-websocket.d.ts && test -e dist/y-websocket.cjs",
     "postpublish": "npm run clean",
     "preversion2": "npm run lint && npm run dist && npm run test && test -e dist/src/y-websocket.d.ts && test -e dist/y-websocket.cjs"
   },
